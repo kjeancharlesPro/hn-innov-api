@@ -8,18 +8,20 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "participant")
+@Table(name = "participants")
 public class ParticipantEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
+
     private String lastName;
+
     private String email;
+
     private String skill;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinColumn(name = "team_id")
     private TeamEntity team;

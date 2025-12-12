@@ -15,12 +15,22 @@ public class ParticipantServiceImpl implements ParticipantService {
     private ParticipantRepository repository;
 
     @Override
-    public long count() {
-        return repository.count();
+    public List<ParticipantEntity> getAll() {
+        return repository.findAll();
     }
 
     @Override
-    public List<ParticipantEntity> getAll() {
-        return repository.findAll();
+    public List<String> getAllEmail() {
+        return repository.findAll().stream().map(ParticipantEntity::getEmail).toList();
+    }
+
+    @Override
+    public void save(ParticipantEntity p) {
+        repository.save(p);
+    }
+
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
     }
 }

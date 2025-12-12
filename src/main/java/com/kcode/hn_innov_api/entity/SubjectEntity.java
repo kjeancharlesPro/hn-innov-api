@@ -5,24 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "jury_member")
-public class JuryMemberEntity {
+@Table(name = "subject")
+public class SubjectEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
     private String title;
-    @Lob
     private String description;
-    @Lob
     private String problem;
-    @Lob
     private String innovation;
 }

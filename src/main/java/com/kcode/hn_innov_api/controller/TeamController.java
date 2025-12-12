@@ -1,6 +1,7 @@
 package com.kcode.hn_innov_api.controller;
 
 
+import com.kcode.hn_innov_api.entity.ParticipantEntity;
 import com.kcode.hn_innov_api.entity.TeamEntity;
 import com.kcode.hn_innov_api.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,17 @@ public class TeamController {
     private TeamService service;
 
     @GetMapping("/generate")
-    public void generate() {
-        service.generateTeam();
+    public List<TeamEntity> generate() {
+        return service.generateTeam();
+    }
+
+    @GetMapping("/all")
+    public List<TeamEntity> getAll() {
+        return service.getAll();
+    }
+
+    @DeleteMapping
+    private void deleteAll(){
+        service.deleteAll();
     }
 }
