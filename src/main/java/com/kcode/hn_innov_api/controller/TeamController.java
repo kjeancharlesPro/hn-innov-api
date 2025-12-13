@@ -27,7 +27,7 @@ public class TeamController {
         return service.getAll();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     private void deleteAll(){
         service.deleteAll();
     }
