@@ -19,7 +19,7 @@ public class HackathonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private JuryMemberEntity juryMember;
 
     @OneToMany(mappedBy = "hackathon", cascade = CascadeType.ALL)
