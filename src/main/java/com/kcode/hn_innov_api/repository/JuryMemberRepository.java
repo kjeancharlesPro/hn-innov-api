@@ -11,4 +11,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource(path = "jury-members")
 @CrossOrigin(origins = "*")
 public interface JuryMemberRepository extends JpaRepository<JuryMemberEntity, Long> {
+    JuryMemberEntity findByEmail(String email);
 }

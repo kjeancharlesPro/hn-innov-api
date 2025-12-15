@@ -14,7 +14,7 @@ public class EmailController {
     private EmailService emailService;
 
     @GetMapping("/sendInvitation/{email}")
-    public void sendInvitation(@PathVariable String email) throws MessagingException {
+    public void sendInvitation(@PathVariable String email ) throws MessagingException {
         emailService.sendInvitation(email);
     }
 

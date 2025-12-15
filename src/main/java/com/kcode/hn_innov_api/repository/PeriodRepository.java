@@ -15,5 +15,4 @@ public interface PeriodRepository extends JpaRepository<PeriodEntity, Long> {
 
     PeriodEntity findFirstByStartDateAfterOrderByStartDateAsc(LocalDateTime targetDate);
 
-    PeriodEntity findFirstByEndDateLessThanEqualOrderByEndDateDesc(LocalDateTime targetDate);
 }

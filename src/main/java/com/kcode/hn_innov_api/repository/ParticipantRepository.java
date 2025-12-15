@@ -10,4 +10,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource(path = "participants")
 @CrossOrigin(origins = "*")
 public interface ParticipantRepository extends JpaRepository<ParticipantEntity, Long> {
+    ParticipantEntity findByEmail(String email);
 }
