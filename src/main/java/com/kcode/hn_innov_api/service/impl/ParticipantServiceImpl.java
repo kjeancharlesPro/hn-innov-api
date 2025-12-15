@@ -33,4 +33,9 @@ public class ParticipantServiceImpl implements ParticipantService {
     public void deleteAll() {
         repository.deleteAll();
     }
+
+    @Override
+    public ParticipantEntity getByEmail(String email) {
+        return repository.findByEmail(email);
+    }
 }

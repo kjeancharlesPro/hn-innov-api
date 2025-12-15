@@ -44,4 +44,9 @@ public class JuryMemberServiceImpl implements JuryMemberService {
         repository.deleteAll();
     }
 
+    @Override
+    public JuryMemberEntity getByEmail(String email) {
+        return repository.findByEmail(email);
+    }
+
 }

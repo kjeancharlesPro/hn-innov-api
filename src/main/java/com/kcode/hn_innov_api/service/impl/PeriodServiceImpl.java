@@ -16,6 +16,7 @@ public class PeriodServiceImpl implements PeriodService {
 
     @Override
     public PeriodEntity getClosestPeriodFromNow() {
+
         return repository.findFirstByStartDateAfterOrderByStartDateAsc(LocalDateTime.now());
     }
 }

@@ -13,4 +13,6 @@ public interface ParticipantService {
     void save(ParticipantEntity p);
 
     void deleteAll();
+
+    ParticipantEntity getByEmail(String email);
 }
